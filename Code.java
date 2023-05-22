@@ -138,9 +138,10 @@ public class main_misc2 {
 			return find_path(grid,x,y+1,path,n,m);
 		}
 		if(check_path(x+1,y,n,m,grid) == 0 && check_path(x,y+1,n,m,grid) == 0) {
+			//no path,so go back to (0,0).Now,the robot now that this cell is "bad"
 			grid.get(x).get(y).has_path = 0;
 			path.clear();
-            return find_path(grid,0,0,path,n,m);
+                        return find_path(grid,0,0,path,n,m);
 		}
 		return 0;
 		
